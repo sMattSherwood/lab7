@@ -36,10 +36,24 @@
         </div>
         <div class="col-3 p-3 border border-dark">
             <h4>Find by Last Name</h4>
-            <form action="/findLast" mehtod="post" class="form">
+            <form action="/findLast" method="post" class="form">
                 <input type="text" name="lastName" placeholder="Lastname">
                 <input type="submit" value="Find">
             </form>
+        </div>
+        <!--Lab7 part 2 code-->
+        <div class="col-3 p-3 border border-dark">
+            <form action="/findFirst" method="post" class="form">
+                <h4>Find by First Name</h4>
+                <input type="text" name="firstName" placeholder="Firstname">
+                <input type="submit" value="Find">
+            </form>
+        </div>
+        <div class="col-3 p-3 border border-dark">
+            <form action="/authors">
+                <input type="submit" value="Order by First Name" formaction="/orderByFirst">
+            </form>
+
         </div>
         <div class="col-3 p-3 border border-dark">
             <h4>Author List</h4>

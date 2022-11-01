@@ -57,4 +57,22 @@ public class MainController {
         return getAuthors(model);
     }
 
+    // part two of lab7
+    @PostMapping("/findFirst")
+    public String findByFirstName(@RequestParam String firstName, Model model)
+    {
+        List<Author> authors = authorRepo.findByFirstName(firstName);
+        model.addAttribute("authors", authors);
+        return "authorPage";
+    }
+
+    @GetMapping("OrderByFirst")
+    public String orderByFirstName(Model model)
+    {
+        List<Author> authors = authorRepo.findAllByOrderByFirstName();
+        model.addAttribute("authors", authors);
+        return "authorPage";
+
+    }
+
 }
