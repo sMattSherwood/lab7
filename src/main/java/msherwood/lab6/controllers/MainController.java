@@ -20,7 +20,7 @@ public class MainController {
     {
         this.authorRepo = authorRepo;
     }
-
+// this will allow the displayPage to be shown
     @GetMapping(value = "/authors")
     public String getAuthors(Model model)
     {
@@ -28,7 +28,7 @@ public class MainController {
         model.addAttribute("authors", authors);
         return "authorPage";
     }
-
+// this will use the list of author and use the lastName var's to find the users input
     @PostMapping("/findLast")
     public String findByLastName(@RequestParam String lastName, Model model)
     {
@@ -36,7 +36,7 @@ public class MainController {
         model.addAttribute("authors", authors);
         return "authorPage";
     }
-
+// this will order the list of last names
     @GetMapping("/OrderByLast")
     public String orderByLastName(Model model)
     {
@@ -44,7 +44,7 @@ public class MainController {
         model.addAttribute("authors", authors);
         return "authorPage";
     }
-
+// this will allow the user to input a new author by using the getters and setters and saving it to the database
     @PostMapping("/addAuthor")
     public String addAuthor(@RequestParam String firstName, @RequestParam String lastName, Model model)
     {
@@ -58,6 +58,8 @@ public class MainController {
     }
 
     // part two of lab7
+
+    // this will allow user input and search for the corisponding last name
     @PostMapping("/findFirst")
     public String findByFirstName(@RequestParam String firstName, Model model)
     {
@@ -65,7 +67,7 @@ public class MainController {
         model.addAttribute("authors", authors);
         return "authorPage";
     }
-
+// this will order the list of authors by first name 
     @GetMapping("OrderByFirst")
     public String orderByFirstName(Model model)
     {
@@ -74,5 +76,6 @@ public class MainController {
         return "authorPage";
 
     }
+// end of part 2 of lab 7
 
 }

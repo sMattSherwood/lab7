@@ -22,6 +22,7 @@
                 </form>
             </div>
         </div>
+        <!--this will allow the user to input their own author to the list-->
         <div class="col-3 p-3 border border-dark">
             <form action="/addAuthor" method="post" class="form">
                 <h4>Add Authors</h4>
@@ -53,8 +54,9 @@
             <form action="/authors">
                 <input type="submit" value="Order by First Name" formaction="/orderByFirst">
             </form>
-
         </div>
+        <!--this is where the author list will be displayed, and it will use the data using th for loop to auto fill the correct
+        data based off of the author table-->
         <div class="col-3 p-3 border border-dark">
             <h4>Author List</h4>
             <table>
