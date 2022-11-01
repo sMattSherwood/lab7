@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row py-4">
+            <h1 class="display-3"> Authors Page</h1>
+        </div>
+        <div class="row">
+            <div class="col-3 p-3 bordeer border-dark">
+                <h4>Find All</h4>
+                <form action="/authors">
+                    <input type="submit" value="List Authors">
+                    <input type="submit" value="Order by last name" formaction="/orderByLast">
+                </form>
+            </div>
+        </div>
+        <div class="col-3 p-3 border border-dark">
+            <form action="/addAuthor" method="post" class="form">
+                <h4>Add Authors</h4>
+                <label>First Name</label>
+                <input type="text" name="firstName" placeholder="first">
+                <br>
+                <label>Last Name</label>
+                <input type="text" name="lastName" placeholder="last">
+                <br>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+        <div class="col-3 p-3 border border-dark">
+            <h4>Find by Last Name</h4>
+            <form action="/findLast" mehtod="post" class="form">
+                <input type="text" name="lastName" placeholder="Lastname">
+                <input type="submit" value="Find">
+            </form>
+        </div>
+        <div class="col-3 p-3 border border-dark">
+            <h4>Author List</h4>
+            <table>
+                <tr th:each="author:${authors}">
+                    <td th:text="${author.authorID}"></td>
+                    <td th:text="${author.firstName}"></td>
+                    <td th:text="${author.lastName}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
